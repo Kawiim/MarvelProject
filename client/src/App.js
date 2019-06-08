@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import logo from './logo.svg';
 import Pokemon from "./Pokemon";
+import Pagination from './Pagination';
 import './App.css';
 
 const apiUrl = "http://localhost:6969/pokemons/"
@@ -11,9 +12,11 @@ class App extends Component {
     super(props);
     this.state = {
       pokemonList: [],
+      pageOfItems: []
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.onChangePage = this.onChangePage.bind(this);
   }
 
   componentDidMount() {
@@ -28,18 +31,22 @@ class App extends Component {
     .then(data => this.setState({ pokemonList: data }));
   }
 
+  onChangePage(pageOfItems) {
+    this.setState({ pageOfItems: pageOfItems });
+  }
+
 
   render() {
     const { pokemonList } = this.state;
     return (      
         <div>
           <h1>Pokedex</h1>
+
           <div className="content container">
-            <ul>
-              {pokemonList.map(poke =>
-                <Pokemon pokeAttributs ={poke} />
-              )}
-            </ul>
+            {this.state.pageOfItems.map(item =>
+              <Pokemon pokeAttributs ={item} />
+            )}
+            <Pagination items={this.state.pokemonList} onChangePage={this.onChangePage} />
           </div>
         </div>
     );

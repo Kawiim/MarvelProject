@@ -10,6 +10,7 @@
     "bootstrap": "^3.3.7",
     "create-react-app": "^1.5.2",
     "express": "^4.16.2",
+    "mongoose": "^5.5.13",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",

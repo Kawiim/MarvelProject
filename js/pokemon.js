@@ -42,7 +42,8 @@ module.exports = {
 		        			var pokemon = new PokemonModel({
 		        				name: result.name, 
 							 	weight: result.weight, 
-							 	height: result.height
+							 	height: result.height,
+							 	imageUrl: result.sprites.front_default
 							});
 						
 							pokemon.save(function(err, rest){

@@ -5,6 +5,7 @@ var pokemonSchema = mongoose.Schema({
   name: String,
   height: Number,
   weight: Number,
+  imageUrl: String
 });
 
 var Pokemon = mongoose.model('Pokemon', pokemonSchema)

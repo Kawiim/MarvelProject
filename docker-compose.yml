@@ -17,7 +17,7 @@ services:
     command: node server
 
 #   Setup client container
-  server:
+  client:
     build: ./client
     expose:
       - 3000

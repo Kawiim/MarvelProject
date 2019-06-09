@@ -40,6 +40,7 @@ module.exports = {
 		        		.then(function (result) {
 		        			pokemonData.push(result)
 		        			var pokemon = new PokemonModel({
+		        				order: result.id,
 		        				name: result.name, 
 							 	weight: result.weight, 
 							 	height: result.height,

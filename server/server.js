@@ -15,7 +15,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/pokemons',function(req,res){
-	PokemonModel.find({}, function(err, pokemons) {
+	PokemonModel.find({}, null, {sort: 'order'},  function(err, pokemons) {
 		if(err) throw err;
 		res.setHeader('Content-Type', 'application/json');
 		res.send(JSON.stringify(pokemons))

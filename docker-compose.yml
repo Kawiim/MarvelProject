@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+
+#   Setup node container
+  server:
+    build: ./server
+    expose:
+      - ${APP_SERVER_PORT}
+    environment:
+      API_HOST: ${API_HOST}
+      APP_SERVER_PORT: ${APP_SERVER_PORT}
+    ports:
+      - ${APP_SERVER_PORT}:${APP_SERVER_PORT}
+    volumes:
+      - ./server/src:/srv/app/pokemon-app-server/src
+    command: node server
+
+#   Setup client container
+  server:
+    build: ./client
+    expose:
+      - ${REACT_APP_PORT}
+    environment:
+      - REACT_APP_PORT=${REACT_APP_PORT}
+    ports:
+      - ${REACT_APP_PORT}:${REACT_APP_PORT}
+    volumes:
+      - ./client/src:/srv/app/pokemon-app-client/src
+      - ./client/public:/srv/app/pokemon-app-client/public
+    links:
+      - server
+    command: yarn start

@@ -1,6 +1,6 @@
 # MarvelProject (aka PokemonProject)
-(6h)
-> It was suppose to be a web app about Marvel characters, but as the API seems to be down, let me introduce you to the Pokemon Universe
+(6h
+)> It was suppose to be a web app about Marvel characters, but as the API seems to be down, let me introduce you to the Pokemon Universe
 
 
 ## The web application

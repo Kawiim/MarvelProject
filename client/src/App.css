@@ -22,12 +22,17 @@ li.item h1.pokeName {
 
 li.item p.info {
   padding-left: 10px;
+  padding-top: 10px;
 } 
 
-li.item img {
+.pokeImg {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.info img {
+  display: inline-block;
 }
 
 .pagination {

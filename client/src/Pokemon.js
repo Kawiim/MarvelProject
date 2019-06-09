@@ -7,9 +7,9 @@ class Pokemon extends React.Component {
     	<Col>
 	    	<li key={this.props.pokeAttributs._id} class= "item">
 			    <h1 class="pokeName">{this.props.pokeAttributs.name}</h1>
-			    <img src={this.props.pokeAttributs.imageUrl}/>
-				<p class="info">Height : {this.props.pokeAttributs.height}</p>
-				<p class="info">Weight : {this.props.pokeAttributs.weight}</p>
+			    <img class="pokeImg" src={this.props.pokeAttributs.imageUrl}/>
+				<p class="info"><img src="ruler.png"/> Height : {this.props.pokeAttributs.height}</p>
+				<p class="info"><img src="weight.png"/> Weight : {this.props.pokeAttributs.weight}</p>
 			</li>
 		</Col>
 	);

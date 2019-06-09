@@ -1,8 +1,13 @@
 import React, { Component } from "react";
-import logo from './logo.svg';
+import logo from './poke_logo.png';
 import Pokemon from "./Pokemon";
 import Pagination from './Pagination';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+
+import Navbar from 'react-bootstrap/Navbar';
+import Row from 'react-bootstrap/Row';
+
 
 const apiUrl = "http://localhost:6969/pokemons/"
 
@@ -37,18 +42,33 @@ class App extends Component {
 
 
   render() {
-    const { pokemonList } = this.state;
-    return (      
+    return (  
+      <div>
+        <Navbar bg="dark" variant="dark">
+          <Navbar.Brand>
+            <img
+              alt=""
+              src= {logo}
+              width="40"
+              height="40"
+              className="d-inline-block align-top"
+            />
+            {' PokeReact '}
+          </Navbar.Brand>
+        </Navbar>    
         <div>
-          <h1>Pokedex</h1>
+          <h4>You'll find on this website all the data you need about the Pokemon universe !</h4>
 
           <div className="content container">
-            {this.state.pageOfItems.map(item =>
-              <Pokemon pokeAttributs ={item} />
-            )}
-            <Pagination items={this.state.pokemonList} onChangePage={this.onChangePage} />
+            <Row className="justify-content-md-center">
+              {this.state.pageOfItems.map(item =>
+                <Pokemon pokeAttributs ={item} />
+              )}
+              <Pagination items={this.state.pokemonList} onChangePage={this.onChangePage} />
+            </Row>
           </div>
         </div>
+      </div>
     );
   }
 }

@@ -116,30 +116,30 @@ class Pagination extends React.Component {
         return (
             <ul className="pagination">
                 <li className={pager.currentPage === 1 ? 'disabled' : ''}>
-                    <Button variant="outline-secondary">
-                        <a onClick={() => this.setPage(1)}>First</a>
+                    <Button variant="outline-secondary" onClick={() => this.setPage(1)}>
+                        <a>First</a>
                     </Button>
                 </li>
                 <li className={pager.currentPage === 1 ? 'disabled' : ''}>
-                    <Button variant="outline-secondary">
-                        <a onClick={() => this.setPage(pager.currentPage - 1)}>Previous</a>
+                    <Button variant="outline-secondary" onClick={() => this.setPage(pager.currentPage - 1)}>
+                        <a>Previous</a>
                     </Button>
                 </li>
                 {pager.pages.map((page, index) =>
                     <li key={index} className={pager.currentPage === page ? 'active' : ''}>
-                        <Button variant="outline-secondary">
-                            <a onClick={() => this.setPage(page)}>{page}</a>
+                        <Button variant="outline-secondary" onClick={() => this.setPage(page)}>
+                            <a>{page}</a>
                         </Button>
                     </li>
                 )}
                 <li className={pager.currentPage === pager.totalPages ? 'disabled' : ''}>
-                    <Button variant="outline-secondary">
-                        <a onClick={() => this.setPage(pager.currentPage + 1)}>Next</a>
+                    <Button variant="outline-secondary" onClick={() => this.setPage(pager.currentPage + 1)}>
+                        <a>Next</a>
                     </Button>
                 </li>
                 <li className={pager.currentPage === pager.totalPages ? 'disabled' : ''}>
-                    <Button variant="outline-secondary">
-                        <a onClick={() => this.setPage(pager.totalPages)}>Last</a>
+                    <Button variant="outline-secondary" onClick={() => this.setPage(pager.totalPages)}>
+                        <a>Last</a>
                     </Button>
                 </li>
             </ul>

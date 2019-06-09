@@ -8,7 +8,7 @@ PokemonModel.remove({}, function(err) {
    console.log('collection removed') 
 });
 
-const nbResults = 100;
+const nbResults = 300;
 pokemonData = [];
 pokemonRequestPromises = [];
 
